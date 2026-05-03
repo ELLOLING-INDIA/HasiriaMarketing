@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Product Catalogue — Hasiria Marketing Sdn Bhd</title>
+  <meta name="description" content="Browse Hasiria Marketing's full export product catalogue — 80+ premium spices, pulses, grains, nuts, sauces and food products available for wholesale and export."/>
+  <!-- ── Security & Production Meta ── -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block"/>
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()"/>
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: https://images.unsplash.com;
+    connect-src 'self';
+    frame-ancestors 'none';
+    base-uri 'self';
+    form-action 'self';
+  "/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Product Catalogue — Hasiria Marketing Sdn Bhd"/>
+  <meta property="og:description" content="Browse 80+ premium spices, pulses, grains, nuts and food products available for wholesale and export."/>
+  <meta property="og:image" content="../images/logo.png"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#1a2456"/>
+  <link rel="icon" href="../images/logo.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="../images/logo.png"/>
+  <link rel="canonical" href="https://www.hasiriamarketing.com/pages/products.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    /* ── Page-level overrides ── */
+    .cat-nav-wrap{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:var(--nav-h);z-index:100;box-shadow:var(--sh-xs)}
+    .cat-nav-scroll{display:flex;align-items:center;gap:8px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
+    .cat-nav-scroll::-webkit-scrollbar{display:none}
+
+    .product-section{padding:72px 0 48px;border-bottom:1px solid var(--border)}
+    .product-section:last-of-type{border-bottom:none}
+    .ps-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+    .ps-label{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+    .ps-title{font-family:var(--font-display);font-size:2.1rem;color:var(--text-dark);margin-bottom:0}
+    .ps-count{background:var(--light);color:var(--text-muted);font-size:.8rem;font-weight:600;padding:6px 16px;border-radius:50px}
+
+    .prod-cards-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    @media(max-width:1100px){.prod-cards-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:900px){.prod-cards-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:600px){.prod-cards-grid{grid-template-columns:repeat(2,1fr)}}
+
+    .pc{
+      background:var(--white);border:1px solid var(--border);border-radius:var(--r-sm);
+      overflow:hidden;transition:all .25s var(--ease);
+    }
+    .pc:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:transparent}
+    .pc-img{
+      height:140px;overflow:hidden;background:var(--light);
+      display:flex;align-items:center;justify-content:center;position:relative;
+    }
+    .pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease)}
+    .pc:hover .pc-img img{transform:scale(1.08)}
+    .pc-placeholder{font-size:2.5rem;opacity:.35}
+    .pc-body{padding:12px 14px 14px}
+    .pc-name{font-size:.85rem;font-weight:600;color:var(--text-dark);line-height:1.35;margin-bottom:5px}
+    .pc-malay{font-size:.72rem;color:var(--text-muted);font-style:italic}
+
+    /* Section color accents */
+    .section-accent-gold .ps-label{color:var(--gold)}
+    .section-accent-green .ps-label{color:var(--green-dark)}
+    .section-accent-navy .ps-label{color:var(--navy-mid)}
+
+    .enquire-bar{
+      background:var(--navy-dark);padding:40px 0;margin-top:0;
+    }
+    .enquire-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .enquire-text h3{font-family:var(--font-display);font-size:1.6rem;color:var(--white);margin-bottom:6px}
+    .enquire-text p{color:rgba(255,255,255,.45);font-size:.9rem}
+    .enquire-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+    .note-banner{
+      background:var(--gold-pale);border:1px solid rgba(200,162,40,.25);
+      border-radius:var(--r-sm);padding:16px 20px;
+      display:flex;align-items:center;gap:12px;margin-bottom:48px;
+      font-size:.88rem;color:#7a6010;
+    }
+    .note-banner strong{color:#5a4808}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../images/logo.png" alt="Hasiria Marketing"/></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="products.html" class="active">Catalogue</a></li>
+      <li><a href="../index.html#markets">Markets</a></li>
+      <li><a href="about.html">Our Team</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="../index.html#contact" class="btn btn-primary">Enquire Now</a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="../index.html">Home</a>
+  <a href="../index.html#about">About</a>
+  <a href="../index.html#services">Services</a>
+  <a href="products.html">Catalogue</a>
+  <a href="../index.html#markets">Markets</a>
+  <a href="about.html">Our Team</a>
+  <a href="../index.html#contact">Contact</a>
+  <a href="../index.html#contact" class="btn btn-primary">Enquire Now</a>
+</nav>
+
+
+<!-- PAGE HERO -->
+<section class="page-hero products-page-header">
+  <div class="hero-pattern"></div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span class="sep">›</span><span>Product Catalogue</span></div>
+      <span class="eyebrow">Full Catalogue</span>
+      <h1>Our Product Range</h1>
+      <p class="sub">80+ premium spices, pulses, grains, nuts, sauces and agro-based food products available for wholesale, retail and international export. All product images are illustrative — contact us for accurate product specifications.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- STICKY CATEGORY NAV -->
+<div class="cat-nav-wrap">
+  <div class="container">
+    <div class="cat-nav-scroll">
+      <button class="cat-filter-btn active" data-filter="all">All Products</button>
+      <button class="cat-filter-btn" data-filter="spices">🌶️ Whole Spices</button>
+      <button class="cat-filter-btn" data-filter="powders">🧂 Spice Powders</button>
+      <button class="cat-filter-btn" data-filter="pulses">🫘 Pulses &amp; Legumes</button>
+      <button class="cat-filter-btn" data-filter="grains">🌾 Grains &amp; Flour</button>
+      <button class="cat-filter-btn" data-filter="nuts">🥜 Nuts &amp; Dry Fruits</button>
+      <button class="cat-filter-btn" data-filter="sauces">🥫 Sauces &amp; Pastes</button>
+      <button class="cat-filter-btn" data-filter="food">🍱 Food Stuff</button>
+    </div>
+  </div>
+</div>
+
+
+<div style="background:var(--off-white);padding-top:0;">
+<div class="container" style="padding-top:48px;">
+
+  <!-- Note -->
+  <div class="note-banner">
+    <span style="font-size:1.2rem">📋</span>
+    <div><strong>Note:</strong> Product images are currently illustrative placeholders. Actual product photos will be updated shortly. For specifications, pricing or bulk orders, please <a href="../index.html#contact" style="color:var(--gold);font-weight:600;">contact us directly</a>.</div>
+  </div>
+
+
+  <!-- ── WHOLE SPICES ── -->
+  <div class="product-section" data-cat="spices" id="spices">
+    <div class="ps-header">
+      <div>
+        <div class="ps-label">Category 01</div>
+        <div class="ps-title">Whole Spices</div>
+      </div>
+      <div class="ps-count">18 Products</div>
+    </div>
+    <div class="prod-cards-grid">
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1599909533731-12d62a5d01b5?w=300&q=70" alt="Coriander Seeds"/></div><div class="pc-body"><div class="pc-name">Coriander Seeds</div><div class="pc-malay">Ketumbar</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Cumin Seeds"/></div><div class="pc-body"><div class="pc-name">Cumin Seeds</div><div class="pc-malay">Jintan Putih</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Fennel Seeds"/></div><div class="pc-body"><div class="pc-name">Fennel Seeds</div><div class="pc-malay">Jintan Manis</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Dill Seeds"/></div><div class="pc-body"><div class="pc-name">Dill Seeds</div><div class="pc-malay">Biji Dill</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Sesame Seeds"/></div><div class="pc-body"><div class="pc-name">Sesame Seeds</div><div class="pc-malay">Bijan Putih</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Mustard Seeds"/></div><div class="pc-body"><div class="pc-name">Mustard Seeds</div><div class="pc-malay">Biji Sawi</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300&q=70" alt="Star Anise"/></div><div class="pc-body"><div class="pc-name">Star Anise</div><div class="pc-malay">Bunga Lawang</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Methi Seeds"/></div><div class="pc-body"><div class="pc-name">Methi Seeds / Fenugreek</div><div class="pc-malay">Biji Halba</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=300&q=70" alt="Turmeric Fingers"/></div><div class="pc-body"><div class="pc-name">Turmeric Fingers</div><div class="pc-malay">Kunyit Basah</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=300&q=70" alt="Chili Byadgi"/></div><div class="pc-body"><div class="pc-name">Chili (Byadgi)</div><div class="pc-malay">Cili Kering</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=300&q=70" alt="Chili Sannam"/></div><div class="pc-body"><div class="pc-name">Chili (Sannam)</div><div class="pc-malay">Cili Sannam</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300&q=70" alt="Cloves"/></div><div class="pc-body"><div class="pc-name">Cloves</div><div class="pc-malay">Bunga Cengkih</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Cinnamon Sticks"/></div><div class="pc-body"><div class="pc-name">Cinnamon Sticks</div><div class="pc-malay">Kayu Manis</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Black Cumin"/></div><div class="pc-body"><div class="pc-name">Black Cumin</div><div class="pc-malay">Jintan Hitam</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Black Pepper"/></div><div class="pc-body"><div class="pc-name">Black Pepper</div><div class="pc-malay">Lada Hitam</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="White Pepper"/></div><div class="pc-body"><div class="pc-name">White Pepper</div><div class="pc-malay">Lada Putih</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&q=70" alt="Cardamom"/></div><div class="pc-body"><div class="pc-name">Cardamom</div><div class="pc-malay">Buah Pelaga</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Omam"/></div><div class="pc-body"><div class="pc-name">Omam / Ajwain</div><div class="pc-malay">Omam</div></div></div>
+    </div>
+  </div>
+
+
+  <!-- ── SPICE POWDERS ── -->
+  <div class="product-section" data-cat="powders" id="powders">
+    <div class="ps-header">
+      <div>
+        <div class="ps-label">Category 02</div>
+        <div class="ps-title">Spice Powders</div>
+      </div>
+      <div class="ps-count">8 Products</div>
+    </div>
+    <div class="prod-cards-grid">
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&q=70" alt="Chili Powder"/></div><div class="pc-body"><div class="pc-name">Chili Powder</div><div class="pc-malay">Serbuk Cili</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&q=70" alt="Red Chili Powder"/></div><div class="pc-body"><div class="pc-name">Red Chili Powder</div><div class="pc-malay">Serbuk Cili Merah</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=300&q=70" alt="Turmeric Powder"/></div><div class="pc-body"><div class="pc-name">Turmeric Powder</div><div class="pc-malay">Serbuk Kunyit</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Cumin Powder"/></div><div class="pc-body"><div class="pc-name">Cumin Powder</div><div class="pc-malay">Serbuk Jintan Putih</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Fennel Powder"/></div><div class="pc-body"><div class="pc-name">Fennel Powder</div><div class="pc-malay">Serbuk Jintan Manis</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=300&q=70" alt="Coriander Powder"/></div><div class="pc-body"><div class="pc-name">Coriander Powder</div><div class="pc-malay">Serbuk Ketumbar</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="White Pepper Powder"/></div><div class="pc-body"><div class="pc-name">White Pepper Powder</div><div class="pc-malay">Serbuk Lada Putih</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=300&q=70" alt="Black Pepper Powder"/></div><div class="pc-body"><div class="pc-name">Black Pepper Powder</div><div class="pc-malay">Serbuk Lada Hitam</div></div></div>
+    </div>
+  </div>
+
+
+  <!-- ── PULSES & LEGUMES ── -->
+  <div class="product-section" data-cat="pulses" id="pulses">
+    <div class="ps-header">
+      <div>
+        <div class="ps-label">Category 03</div>
+        <div class="ps-title">Pulses &amp; Legumes</div>
+      </div>
+      <div class="ps-count">12 Products</div>
+    </div>
+    <div class="prod-cards-grid">
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Chick Peas"/></div><div class="pc-body"><div class="pc-name">Chick Peas</div><div class="pc-malay">Kacang Buncis</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Red Lentils"/></div><div class="pc-body"><div class="pc-name">Red Lentils</div><div class="pc-malay">Dhal Merah</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Kidney Beans"/></div><div class="pc-body"><div class="pc-name">Kidney Beans</div><div class="pc-malay">Kacang Merah</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Red Beans"/></div><div class="pc-body"><div class="pc-name">Red Beans</div><div class="pc-malay">Kacang Merah</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Yellow Split Peas"/></div><div class="pc-body"><div class="pc-name">Yellow Split Peas</div><div class="pc-malay">Kacang Dal Kuning</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Mung Dhal"/></div><div class="pc-body"><div class="pc-name">Mung Dhal</div><div class="pc-malay">Kacang Hijau Belah</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Roasted Gram"/></div><div class="pc-body"><div class="pc-name">Roasted Gram</div><div class="pc-malay">Pottu Kadalai</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Mung Beans"/></div><div class="pc-body"><div class="pc-name">Mung Beans</div><div class="pc-malay">Kacang Hijau</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Urad Dal"/></div><div class="pc-body"><div class="pc-name">Urad Dal</div><div class="pc-malay">Kacang Urad</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=300&q=70" alt="Peanut"/></div><div class="pc-body"><div class="pc-name">Peanut</div><div class="pc-malay">Kacang Tanah</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=300&q=70" alt="Corn"/></div><div class="pc-body"><div class="pc-name">Corn</div><div class="pc-malay">Jagung</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=70" alt="Candlenuts"/></div><div class="pc-body"><div class="pc-name">Candlenuts</div><div class="pc-malay">Buah Keras</div></div></div>
+    </div>
+  </div>
+
+
+  <!-- ── GRAINS & FLOUR ── -->
+  <div class="product-section" data-cat="grains" id="grains">
+    <div class="ps-header">
+      <div>
+        <div class="ps-label">Category 04</div>
+        <div class="ps-title">Grains &amp; Flour</div>
+      </div>
+      <div class="ps-count">4 Products</div>
+    </div>
+    <div class="prod-cards-grid">
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&q=70" alt="Wheat Grain"/></div><div class="pc-body"><div class="pc-name">Wheat Grain</div><div class="pc-malay">Gandum</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&q=70" alt="Wheat Flour"/></div><div class="pc-body"><div class="pc-name">Wheat Flour</div><div class="pc-malay">Tepung Gandum</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="Rice Pori"/></div><div class="pc-body"><div class="pc-name">Rice Pori</div><div class="pc-malay">Pori Beras</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&q=70" alt="Poppy Seeds"/></div><div class="pc-body"><div class="pc-name">Poppy Seeds / Kas Kas</div><div class="pc-malay">Kas Kas</div></div></div>
+    </div>
+  </div>
+
+
+  <!-- ── NUTS & DRY FRUITS ── -->
+  <div class="product-section" data-cat="nuts" id="nuts">
+    <div class="ps-header">
+      <div>
+        <div class="ps-label">Category 05</div>
+        <div class="ps-title">Nuts &amp; Dry Fruits</div>
+      </div>
+      <div class="ps-count">9 Products</div>
+    </div>
+    <div class="prod-cards-grid">
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=300&q=70" alt="Cashew Nut"/></div><div class="pc-body"><div class="pc-name">Cashew Nut</div><div class="pc-malay">Kacang Gajus</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=300&q=70" alt="Almond"/></div><div class="pc-body"><div class="pc-name">Badam / Almond</div><div class="pc-malay">Badam</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=300&q=70" alt="Salted Almond"/></div><div class="pc-body"><div class="pc-name">Salted Almond</div><div class="pc-malay">Badam Masin</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=300&q=70" alt="Pistachio"/></div><div class="pc-body"><div class="pc-name">Pistachio</div><div class="pc-malay">Pistasio</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1590080875897-e8c33be83c46?w=300&q=70" alt="Dates"/></div><div class="pc-body"><div class="pc-name">Kurma / Dates</div><div class="pc-malay">Kurma</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1548291003-8a6e5e29f0bb?w=300&q=70" alt="Golden Raisins"/></div><div class="pc-body"><div class="pc-name">Golden Raisins</div><div class="pc-malay">Kismis Emas</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1548291003-8a6e5e29f0bb?w=300&q=70" alt="Black Raisins"/></div><div class="pc-body"><div class="pc-name">Black Raisins</div><div class="pc-malay">Kismis Hitam</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1567593810070-7a3d471af022?w=300&q=70" alt="Roasted Gram"/></div><div class="pc-body"><div class="pc-name">Roasted Gram / Pottu Kadalai</div><div class="pc-malay">Pottu Kadalai</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="Honey"/></div><div class="pc-body"><div class="pc-name">Madu / Honey</div><div class="pc-malay">Madu</div></div></div>
+    </div>
+  </div>
+
+
+  <!-- ── SAUCES & PASTES ── -->
+  <div class="product-section" data-cat="sauces" id="sauces">
+    <div class="ps-header">
+      <div>
+        <div class="ps-label">Category 06</div>
+        <div class="ps-title">Sauces &amp; Pastes</div>
+      </div>
+      <div class="ps-count">5 Products</div>
+    </div>
+    <div class="prod-cards-grid">
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1567529684892-09290a1b2d05?w=300&q=70" alt="Tomato Sauce"/></div><div class="pc-body"><div class="pc-name">Tomato Sauce</div><div class="pc-malay">Sos Tomato</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1567529684892-09290a1b2d05?w=300&q=70" alt="Chili Sauce"/></div><div class="pc-body"><div class="pc-name">Chili Sauce</div><div class="pc-malay">Sos Cili</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1608549036573-2a4b62ad16ea?w=300&q=70" alt="Oyster Sauce"/></div><div class="pc-body"><div class="pc-name">Oyster Sauce</div><div class="pc-malay">Sos Tiram</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=300&q=70" alt="Kundu Chilli"/></div><div class="pc-body"><div class="pc-name">Kundu Chilli</div><div class="pc-malay">Kundu Cili</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="Fried Onions"/></div><div class="pc-body"><div class="pc-name">Bawang Goreng / Fried Onion</div><div class="pc-malay">Bawang Goreng</div></div></div>
+    </div>
+  </div>
+
+
+  <!-- ── FOOD STUFF ── -->
+  <div class="product-section" data-cat="food" id="food">
+    <div class="ps-header">
+      <div>
+        <div class="ps-label">Category 07</div>
+        <div class="ps-title">Food Stuff &amp; Others</div>
+      </div>
+      <div class="ps-count">17 Products</div>
+    </div>
+    <div class="prod-cards-grid">
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="Gula Melaka"/></div><div class="pc-body"><div class="pc-name">Gula Melaka</div><div class="pc-malay">Gula Melaka</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&q=70" alt="Papadam"/></div><div class="pc-body"><div class="pc-name">Papadam / Apalam</div><div class="pc-malay">Papadam</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1547952585-07762a55d763?w=300&q=70" alt="Indomie"/></div><div class="pc-body"><div class="pc-name">Indomie Mi Goreng</div><div class="pc-malay">Mi Goreng</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1547952585-07762a55d763?w=300&q=70" alt="Bihun"/></div><div class="pc-body"><div class="pc-name">Bihun / Rice Vermicelli</div><div class="pc-malay">Bihun</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="Brown Sugar"/></div><div class="pc-body"><div class="pc-name">Brown Sugar</div><div class="pc-malay">Gula Perang</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="White Sago"/></div><div class="pc-body"><div class="pc-name">White Sago</div><div class="pc-malay">Sago Putih</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="Green Sago"/></div><div class="pc-body"><div class="pc-name">Green Sago</div><div class="pc-malay">Sago Hijau</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="Red Sago"/></div><div class="pc-body"><div class="pc-name">Red Sago</div><div class="pc-malay">Sago Merah</div></div></div>
+      <div class="pc reveal"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="Onion"/></div><div class="pc-body"><div class="pc-name">Onion</div><div class="pc-malay">Bawang Besar</div></div></div>
+      <div class="pc reveal rv1"><div class="pc-img"><img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=300&q=70" alt="Rose Onion"/></div><div class="pc-body"><div class="pc-name">Rose Onion (Shallot)</div><div class="pc-malay">Bawang Merah</div></div></div>
+      <div class="pc reveal rv2"><div class="pc-img"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=300&q=70" alt="Turmeric Bold"/></div><div class="pc-body"><div class="pc-name">Turmeric Bold</div><div class="pc-malay">Kunyit Bold</div></div></div>
+      <div class="pc reveal rv3"><div class="pc-img"><img src="https://images.unsplash.com/photo-1547952585-07762a55d763?w=300&q=70" alt="Cooking Oil"/></div><div class="pc-body"><div class="pc-name">Cooking Oils</div><div class="pc-malay">(Export Only)</div></div></div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+</div><!-- /bg -->
+
+
+<!-- ENQUIRE BAR -->
+<div class="enquire-bar">
+  <div class="container">
+    <div class="enquire-inner">
+      <div class="enquire-text">
+        <h3>Interested in a Product?</h3>
+        <p>Contact us for pricing, minimum order quantities and export arrangements.</p>
+      </div>
+      <div class="enquire-btns">
+        <a href="../index.html#contact" class="btn btn-primary">Send Enquiry</a>
+        <a href="about.html" class="btn btn-outline-white">Meet Our Team</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo-wrap">
+          <img class="footer-logo" src="../images/logo.png" alt="Hasiria Marketing Sdn Bhd"/>
+          <div class="footer-logo-text">
+            <span class="flt-name">Hasiria Marketing</span>
+            <span class="flt-tag">Link the world with us!</span>
+          </div>
+        </a>
+        <p>Hasiria Marketing Sdn Bhd — 80+ premium agro products for domestic and international markets. Established 2008.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn">f</a><a href="#" class="social-btn">in</a><a href="#" class="social-btn">W</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Categories</h5><ul>
+        <li><a href="#spices">Whole Spices</a></li>
+        <li><a href="#powders">Spice Powders</a></li>
+        <li><a href="#pulses">Pulses &amp; Legumes</a></li>
+        <li><a href="#grains">Grains &amp; Flour</a></li>
+        <li><a href="#nuts">Nuts &amp; Dry Fruits</a></li>
+        <li><a href="#sauces">Sauces &amp; Pastes</a></li>
+        <li><a href="#food">Food Stuff</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="about.html">Our Team</a></li>
+        <li><a href="../index.html#markets">Markets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Export Markets</h5><ul>
+        <li><a href="../index.html#markets">Malaysia</a></li>
+        <li><a href="../index.html#markets">Australia</a></li>
+        <li><a href="../index.html#markets">Singapore</a></li>
+        <li><a href="../index.html#markets">China</a></li>
+        <li><a href="../index.html#markets">Middle East</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Hasiria Marketing Sdn Bhd. All Rights Reserved.</span>
+      <span>Kuala Lumpur, Malaysia</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
